@@ -27,8 +27,7 @@ struct DetailView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .padding(.top, 20)
-                Text(getDateString(date: results.release_date))
-                //.padding(.top, 10)
+                Text(results.release_date)
                 Text(results.overview)
                     .padding(.top, 20)
                     .multilineTextAlignment(.leading)
@@ -37,13 +36,4 @@ struct DetailView: View {
             }.padding()
         }
     }
-    
-    private func getDateString(date: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy"
-        let newDate = dateFormatter.date(from: date) ?? Date()
-        let strNewDate = dateFormatter.string(from: newDate)
-        return strNewDate
-    }
-    
 }
